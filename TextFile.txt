@@ -1,0 +1,69 @@
+﻿ALTER PROCEDURE disp_net_avg_speed
+	
+	(
+	@m_ip varchar(50),
+	@d_from varchar(11),
+	@d_to varchar(11)	--DATE
+	)
+	
+AS
+BEGIN
+if((@d_from IS null) AND (@d_to IS NULL))
+BEGIN
+			select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '04:00' AND CONVERT(CHAR(5),date,108) < '07:59'
+		and mac_ip=@m_ip
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '08:00' AND CONVERT(CHAR(5),date,108) < '11:59'
+		and mac_ip=@m_ip 
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '12:00' AND CONVERT(CHAR(5),date,108) < '15:59'
+		and mac_ip=@m_ip 
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '16:00' AND CONVERT(CHAR(5),date,108) < '19:59'
+		and mac_ip=@m_ip 
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '20:00' AND CONVERT(CHAR(5),date,108) < '23:59'
+		and mac_ip=@m_ip 
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '00:00' AND CONVERT(CHAR(5),date,108) < '03:59'
+		and mac_ip=@m_ip
+END
+ELSE IF ((@d_from IS NOT null) AND (@d_to IS NOT NULL))
+BEGIN
+				select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '08:00' AND CONVERT(CHAR(5),date,108) < '11:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '08:00' AND CONVERT(CHAR(5),date,108) < '11:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '12:00' AND CONVERT(CHAR(5),date,108) < '15:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '16:00' AND CONVERT(CHAR(5),date,108) < '19:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '20:00' AND CONVERT(CHAR(5),date,108) < '23:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+		union
+		select avg(net_dl_speed) as download_speed, avg(net_ul_speed) as upload_speed  from tb_net_speed
+		where CONVERT(CHAR(5),date,108) >= '00:00' AND CONVERT(CHAR(5),date,108) < '03:59'
+		and mac_ip=@m_ip and (CONVERT(varchar(11),date,106) >= @d_from and 
+		CONVERT(varchar(11),date,106) <=@d_to)
+END
+END

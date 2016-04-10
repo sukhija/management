@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="EMPLOYEE_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <link href="Css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+      
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+      <title>Home</title>
+      <link href="/Images/favicon.ico" class="animation_infinite img-circle" rel="shortcut icon" type="image/x-icon" />
+    
+      <style type="text/css">
+           #particles {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                top: 0;                        
+                bottom: 0;
+                left: 0;
+                right: 0;
+                position: absolute;
+                z-index: -2;
+            }
+
+            
+        </style>
+    <script type="text/javascript">
+       !function (a) { function b(b, d) { function e() { if (w) { $canvas = a('<canvas class="pg-canvas"></canvas>'), v.prepend($canvas), p = $canvas[0], q = p.getContext("2d"), f(); for (var b = Math.round(p.width * p.height / d.density), c = 0; b > c; c++) { var e = new l; e.setStackPos(c), x.push(e) } a(window).on("resize", function () { h() }), a(document).on("mousemove", function (a) { y = a.pageX, z = a.pageY }), B && !A && window.addEventListener("deviceorientation", function () { D = Math.min(Math.max(-event.beta, -30), 30), C = Math.min(Math.max(-event.gamma, -30), 30) }, !0), g(), o("onInit") } } function f() { p.width = v.width(), p.height = v.height(), q.fillStyle = d.dotColor, q.strokeStyle = d.lineColor, q.lineWidth = d.lineWidth } function g() { if (w) { s = a(window).width(), t = a(window).height(), q.clearRect(0, 0, p.width, p.height); for (var b = 0; b < x.length; b++) x[b].updatePosition(); for (var b = 0; b < x.length; b++) x[b].draw(); E || (r = requestAnimationFrame(g)) } } function h() { for (f(), i = x.length - 1; i >= 0; i--) (x[i].position.x > v.width() || x[i].position.y > v.height()) && x.splice(i, 1); var a = Math.round(p.width * p.height / d.density); if (a > x.length) for (; a > x.length;) { var b = new l; x.push(b) } else a < x.length && x.splice(a); for (i = x.length - 1; i >= 0; i--) x[i].setStackPos(i) } function j() { E = !0 } function k() { E = !1, g() } function l() { switch (this.stackPos, this.active = !0, this.layer = Math.ceil(3 * Math.random()), this.parallaxOffsetX = 0, this.parallaxOffsetY = 0, this.position = { x: Math.ceil(Math.random() * p.width), y: Math.ceil(Math.random() * p.height) }, this.speed = {}, d.directionX) { case "left": this.speed.x = +(-d.maxSpeedX + Math.random() * d.maxSpeedX - d.minSpeedX).toFixed(2); break; case "right": this.speed.x = +(Math.random() * d.maxSpeedX + d.minSpeedX).toFixed(2); break; default: this.speed.x = +(-d.maxSpeedX / 2 + Math.random() * d.maxSpeedX).toFixed(2), this.speed.x += this.speed.x > 0 ? d.minSpeedX : -d.minSpeedX } switch (d.directionY) { case "up": this.speed.y = +(-d.maxSpeedY + Math.random() * d.maxSpeedY - d.minSpeedY).toFixed(2); break; case "down": this.speed.y = +(Math.random() * d.maxSpeedY + d.minSpeedY).toFixed(2); break; default: this.speed.y = +(-d.maxSpeedY / 2 + Math.random() * d.maxSpeedY).toFixed(2), this.speed.x += this.speed.y > 0 ? d.minSpeedY : -d.minSpeedY } } function m(a, b) { return b ? void (d[a] = b) : d[a] } function n() { v.find(".pg-canvas").remove(), o("onDestroy"), v.removeData("plugin_" + c) } function o(a) { void 0 !== d[a] && d[a].call(u) } var p, q, r, s, t, u = b, v = a(b), w = !!document.createElement("canvas").getContext, x = [], y = 0, z = 0, A = !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i), B = !!window.DeviceOrientationEvent, C = 0, D = 0, E = !1; return d = a.extend({}, a.fn[c].defaults, d), l.prototype.draw = function () { q.beginPath(), q.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, d.particleRadius / 2, 0, 2 * Math.PI, !0), q.closePath(), q.fill(), q.beginPath(); for (var a = x.length - 1; a > this.stackPos; a--) { var b = x[a], c = this.position.x - b.position.x, e = this.position.y - b.position.y, f = Math.sqrt(c * c + e * e).toFixed(2); f < d.proximity && (q.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY), d.curvedLines ? q.quadraticCurveTo(Math.max(b.position.x, b.position.x), Math.min(b.position.y, b.position.y), b.position.x + b.parallaxOffsetX, b.position.y + b.parallaxOffsetY) : q.lineTo(b.position.x + b.parallaxOffsetX, b.position.y + b.parallaxOffsetY)) } q.stroke(), q.closePath() }, l.prototype.updatePosition = function () { if (d.parallax) { if (B && !A) { var a = (s - 0) / 60; pointerX = (C - -30) * a + 0; var b = (t - 0) / 60; pointerY = (D - -30) * b + 0 } else pointerX = y, pointerY = z; this.parallaxTargX = (pointerX - s / 2) / (d.parallaxMultiplier * this.layer), this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10, this.parallaxTargY = (pointerY - t / 2) / (d.parallaxMultiplier * this.layer), this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10 } switch (d.directionX) { case "left": this.position.x + this.speed.x + this.parallaxOffsetX < 0 && (this.position.x = v.width() - this.parallaxOffsetX); break; case "right": this.position.x + this.speed.x + this.parallaxOffsetX > v.width() && (this.position.x = 0 - this.parallaxOffsetX); break; default: (this.position.x + this.speed.x + this.parallaxOffsetX > v.width() || this.position.x + this.speed.x + this.parallaxOffsetX < 0) && (this.speed.x = -this.speed.x) } switch (d.directionY) { case "up": this.position.y + this.speed.y + this.parallaxOffsetY < 0 && (this.position.y = v.height() - this.parallaxOffsetY); break; case "down": this.position.y + this.speed.y + this.parallaxOffsetY > v.height() && (this.position.y = 0 - this.parallaxOffsetY); break; default: (this.position.y + this.speed.y + this.parallaxOffsetY > v.height() || this.position.y + this.speed.y + this.parallaxOffsetY < 0) && (this.speed.y = -this.speed.y) } this.position.x += this.speed.x, this.position.y += this.speed.y }, l.prototype.setStackPos = function (a) { this.stackPos = a }, e(), { option: m, destroy: n, start: k, pause: j } } var c = "particleground"; a.fn[c] = function (d) { if ("string" == typeof arguments[0]) { var e, f = arguments[0], g = Array.prototype.slice.call(arguments, 1); return this.each(function () { a.data(this, "plugin_" + c) && "function" == typeof a.data(this, "plugin_" + c)[f] && (e = a.data(this, "plugin_" + c)[f].apply(this, g)) }), void 0 !== e ? e : this } return "object" != typeof d && d ? void 0 : this.each(function () { a.data(this, "plugin_" + c) || a.data(this, "plugin_" + c, new b(this, d)) }) }, a.fn[c].defaults = { minSpeedX: .1, maxSpeedX: .7, minSpeedY: .1, maxSpeedY: .7, directionX: "center", directionY: "center", density: 1e4, dotColor: "#666666", lineColor: "#666666", particleRadius: 7, lineWidth: 1, curvedLines: !1, proximity: 100, parallax: !0, parallaxMultiplier: 5, onInit: function () { }, onDestroy: function () { } } }(jQuery),/**
+ * requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+ * @see: http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+ * @see: http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+ * @license: MIT license
+ */
+       function () { for (var a = 0, b = ["ms", "moz", "webkit", "o"], c = 0; c < b.length && !window.requestAnimationFrame; ++c) window.requestAnimationFrame = window[b[c] + "RequestAnimationFrame"], window.cancelAnimationFrame = window[b[c] + "CancelAnimationFrame"] || window[b[c] + "CancelRequestAnimationFrame"]; window.requestAnimationFrame || (window.requestAnimationFrame = function (b) { var c = (new Date).getTime(), d = Math.max(0, 16 - (c - a)), e = window.setTimeout(function () { b(c + d) }, d); return a = c + d, e }), window.cancelAnimationFrame || (window.cancelAnimationFrame = function (a) { clearTimeout(a) }) }();
+
+       $(function () {
+
+           $('#particles').particleground({
+               minSpeedX: 0.3,
+               maxSpeedX: 0.5,
+               minSpeedY: 0.3,
+               maxSpeedY: 0.5,
+               directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+               directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+               density: 10000, // How many particles will be generated: one particle every n pixels
+               dotColor: '#E0C2F0',
+               lineColor: '#E0C2F0',
+               particleRadius: 7, // Dot size
+               lineWidth: 1,
+               curvedLines: true,
+               proximity: 100, // How close two dots need to be before they join
+               parallax: false
+           });
+
+       });
+
+
+    </script>
+</head>
+ <body>
+ <!------------------------------------NAVIGATION START-------------------------------->
+    <div> <div id="particles"></div>
+  		<nav class="navbar navbar-default" >
+  			<div>
+  				<!-- Brand and toggle get grouped for better mobile display -->
+  				<div class="navbar-header">
+  					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+                    <img class="animation_infinite img-circle" id="logo" src="Images/csir_csio_unlabeled.jpg" alt="logo" width="50px" height="50px" />
+  				</div>
+
+  				<!-- Collect the nav links, forms, and other content for toggling -->
+  				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+  					<ul class="nav navbar-nav ">
+  						<li><a href="Home.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+  						<li><a href="#" id="about_us" data-toggle="tab" data-target="#div_about">About Us</a></li>
+  						<li><a href="#" id="contact_us" data-toggle="tab" data-target="#div_contact_us" >Contact Us <span class="glyphicon glyphicon-earphone"></span></a></li>
+  						<li class="dropdown">
+  							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Infrastructure Management<span class="caret"></span></a>
+
+  							<ul class="dropdown-menu" role="menu">
+  								<li><a href="ping_utility.aspx">Ping Utility</a></li>
+  								<li><a href="Speed-Test.aspx">Speed Test</a></li>
+  							</ul>
+  						</li>
+                        
+                        
+  					</ul>
+                        <!----------------------------------------------------------nav left-->
+  					
+                        <!----------------------------------------------------------nav right-->
+  					<ul class="nav navbar-nav navbar-right">
+  						
+  						<li><a href="signin.aspx">Sign In
+  						
+  						</a></li>
+  						
+  					</ul>
+
+  				</div><!-- navbar collapse end -->
+  			</div><!-- container-fluid end -->
+  		</nav>
+    </div>
+
+ <!------------------------------------ABOUT START--------------------------------->    
+ <center>
+ <div style="max-width:1000px" align="center">
+ 
+     <div class="tab-content" style="font-size:medium; text-align:justify;">
+        <div id="div_about" class="tab-pane fade" >
+            <h1>About Us</h1>
+            <hr style="border-color: #9932CC;"/>
+            <p >
+                Central Scientific Instruments Organisation (CSIO), a constituent unit of Council of Scientific & Industrial Research (CSIR), is a premier national laboratory dedicated to research, design and development of scientific and industrial instruments. It is a multi-disciplinary and multi-dimensional apex industrial research & development organisation in the country to stimulate growth of Instrument Industry in India covering wide range and applications.
+            </p>
+            <div id="more_about" class="tab-pane fade">
+                <p>CSIO is a multi-disciplinary organization having well equipped laboratories manned by highly qualified and well trained staff with infrastructural facilities in the areas of Agrionics; Medical Instrumentation and Prosthetic Devices; Optics and Cockpit based Instrumentation; Fiber/Laser Optics based Sensors & Instrumentation; Analytical Instrumentation; Advanced Materials based Transducers etc. Large number of instruments ranging from simple to highly sophisticated ones, have been designed and developed by the Institute and their know-hows have been passed on to the industry for commercial exploitation. Having contributed substantially towards the growth of the scientific instruments industry in the country, CSIO enjoys high degree of credibility among the users of the instruments as well as the instrument industry.</p> 
+            </div>
+            <p><a class="btn btn-primary btn-lg" href="#" data-toggle="collapse" 
+                  data-target="#more_about" style="display:inline;">Read More...</a></p>
+        </div>
+<!------------------------------------CONTACT-US START--------------------------------> 
+        <div id="div_contact_us" class="tab-pane fade" >
+            <h1>Contact Us</h1>
+            <hr style="border-color: #9932CC;"/>
+            <div>
+              <table class="table-responsive">
+                <tr>
+                    <td valign="top">
+                       <strong> Postal Address: </strong>&nbsp;
+                    </td>
+                    <td colspan="2">
+                        Central Scientific Instruments Organisation<br />
+                         Sector 30-C, Chandigarh-160030 India<br /><br /><br />
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <strong> Fax: </strong>
+                    </td>
+                    <td valign="top">
+                        Director's office <br />
+                        COA's office
+                    </td>
+                    <td>
+                         (+91)-172-2657267<br />
+                         (+91)-172-2657082<br /><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <strong> EPABX lines:	 </strong>
+                    </td>
+                    <td valign="top">
+                        During Working Hour
+                    </td>
+                    <td>
+                        2651722, 2651728, 2651733, <br />
+                        2651745, 2651746, 2651761,<br />
+                        2651783, 2651796, 2651797,<br />
+                        2651820 2651831, 2657661,<br />
+                        2657811, 2657826<br /><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    
+                    </td>
+                    <td valign="top">
+                        Beyond Working Hours &nbsp;
+                    </td>
+                    <td>
+                        0172-2657811<br /><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong> Working days: </strong><br />
+                        <strong> Working hours: </strong>&nbsp;
+                    </td>
+                    <td>
+                        Monday to Friday<br />
+                        9.00am to 5.30pm
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+               
+            </table>
+            </div>
+            
+        </div>  
+
+     </div>
+ </div>   </center>
+     
+     
+     
+     
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+     
+     </asp:ContentPlaceHolder>
+
+  </body>
+</html>
