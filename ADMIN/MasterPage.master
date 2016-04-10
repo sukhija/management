@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="ADMIN_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+     <link href="../Css/bootstrap.css" rel="stylesheet" type="text/css" />
+     <script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+     <script src="../js/bootstrap.js" type="text/javascript"></script>
+    <title>Admin Panel</title>
+     <link href="/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+</head>
+
+<body>
+    
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+     <div>
+  		<nav class="navbar navbar-default" >
+  			<div>
+  				<!-- Brand and toggle get grouped for better mobile display -->
+  				<div class="navbar-header">
+  					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+                    <img class="animation_infinite img-circle" id="logo" src="../Images/csir_csio_unlabeled.jpg" alt="logo" width="50px" height="50px" />
+  				</div>
+
+  <!---------------start nav left--------------------------- Collect the nav links, forms, and other content for toggling -->
+
+  				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+  					<ul class="nav navbar-nav ">
+  						<li><a href="../Home.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+  						<li class="dropdown">
+  							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Infrastructure Management<span class="caret"></span></a>
+
+  							<ul class="dropdown-menu" role="menu">
+  								<li><a href="../EMPLOYEE/pingtest.aspx">Ping Test</a></li>
+  								<li><a href="../EMPLOYEE/speedtest.aspx">Speed Test</a></li>
+  							</ul>
+  						</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">MIS Inventory Store<span class="caret"></span></a>
+
+  							<ul class="dropdown-menu" role="menu">
+  								
+                                 <li><a id="hw" href="hardware.aspx">Hardware</a></li>
+                                 <li><a href="miscellaneous.aspx">Miscellaneous</a></li>
+                                 <li><a href="software.aspx">Software</a></li>
+                                 <li><a href="stationary.aspx">Stationary</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="emp.aspx">Employees</a></li>
+                        <li><a href="../EMPLOYEE/inventory.aspx">My Inventory Room</a></li>
+                        <li><a style="width:auto; background-color:#9932cc; cursor:pointer" data-toggle="modal" data-target="#Request_Modal">
+                                <span class="glyphicon glyphicon-user" name="icons" id="no_of_requests" runat="server"> </span> 
+                             </a></li>
+                        <li><a style="width:auto; background-color:#9932cc;" href="notifications.aspx">
+                                <span class="glyphicon glyphicon-bell" name="icons" id="no_of_notifications" runat="server">
+                                </span> </a></li>
+                        
+                        <li><a style="width:auto; background-color:#9932cc; cursor:pointer" href="controlPanel.aspx">
+                                <span class="glyphicon glyphicon-cog" name="icons" id="Span_control_panel" runat="server">
+                                </span> </a></li>
+  					</ul>
+                        <!-------------------------------------------------------End--nav left-->
+  					
+                        <!------------------------------------------------------start----nav right-->
+  					<ul class="nav navbar-nav navbar-right">
+  						
+  						<li>
+  						    <asp:LinkButton class="glyphicon glyphicon-off" ID="LinkButton1" 
+                                runat="server" ToolTip="sign out" onclick="LinkButton1_Click"></asp:LinkButton>
+  						    
+  						</li>
+  						
+  						
+  					</ul>
+                        <!------------------------------------------------------End----nav right-->
+  				</div><!-- navbar collapse end -->
+  			</div><!-- container-fluid end -->
+  		</nav>
+    </div>
+    
+
+       
+              <!-- Modal -->
+                
+        <div class="modal fade" id="Request_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Request</h4>
+                      </div>
+                      <div class="modal-body">
+                          
+        <asp:GridView ID="Gridview_Request" runat="server" AutoGenerateColumns="False" onrowdeleting="Gridview_Request_RowDeleting"
+                    DataKeyNames="Pemp_id" onrowediting="Gridview_Request_RowEditing" ShowHeader="False" GridLines="None">
+                                 
+                <Columns>
+                    <asp:TemplateField Visible="false">
+                        <ItemTemplate>
+                            <asp:Label ID="Label_emp_id" Visible="false" runat="server" Text='<%#Eval("Pemp_id") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:ImageField DataImageUrlField="Pemp_picture_path">
+                        <ControlStyle Height="70px" Width="70px" CssClass="img-circle"/>
+                    </asp:ImageField>
+
+                     <asp:TemplateField ItemStyle-Width="100px">
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%#Eval("Pemp_f_name")%>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="100px"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:CommandField ButtonType="Image" 
+                        EditImageUrl="~/Images/nav_icon/accept_request.ico"  ShowEditButton="True">
+                         <ControlStyle Height="22px" Width="30px" />
+                    </asp:CommandField>
+                    <asp:TemplateField >
+                        <ItemTemplate>
+                            <asp:ImageButton ID="btnRejectRequest" runat="server" CommandName="DELETE" ToolTip="Deny"
+                            ImageUrl="~/Images/nav_icon/reject_request.ico" Height="22px" Width="30px"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+
+
+
+          
+                
+                
+               
+             
+<table style="width:100%;">
+    <tr>
+        <td colspan="3">
+           <div class="container-fluid">
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+           </div>
+        </td>
+    </tr>
+    <tr>
+        
+        <td colspan="3">
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+    </tr>
+    <tr>
+        <td class="auto-style1">
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+    </tr>
+    
+         <asp:GridView ID="Gridview_Notification" runat="server" AutoGenerateColumns="False" DataKeyNames="Psoftware_id" 
+        onselectedindexchanged="Gridview_Notification_SelectedIndexChanged" ShowHeader="False">
+                <Columns>
+                    <asp:TemplateField Visible="false">
+                        <ItemTemplate>
+                            <asp:Label ID="Label_software_id" Visible="false" runat="server" Text='<%#Eval("Psoftware_id") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    
+                     <asp:TemplateField ItemStyle-Width="100px">
+                        <ItemTemplate>
+                            <asp:Label ID="Label_software_name" runat="server" Text='<%#Eval("Psoftware_name")%>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Width="100px"></ItemStyle>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField >
+                        <ItemTemplate>
+                            <asp:Label ID="Label_software_warrenty_to" runat="server" Text='<%#Eval("Psoftware_warrenty_to")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField >
+                        <ItemTemplate>
+                            <asp:Label ID="Label_software_amc_to" runat="server" Text='<%#Eval("Psoftware_annual_maintenance_contract_to")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField >
+                        <ItemTemplate>
+                            <asp:Label ID="Label_software_emp_name" runat="server" Text='<%#Eval("Psoftware_emp_name")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:CommandField ButtonType="Image" 
+                        EditImageUrl="~/Images/nav_icon/accept_request.ico" ShowEditButton="True">
+                         <ControlStyle Height="22px" Width="30px" />
+                    </asp:CommandField>
+                </Columns>
+            </asp:GridView>
+        
+</table>
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" style=" borbackground-color:#9932cc; color:Yellow;" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i>Top
+    </a>
+</span>
+
+    </form>
+    <script type="text/javascript">
+            // Only enable if the document has a long scroll bar
+            // Note the window height + offset
+            if ( ($(window).height() + 100) < $(document).height() ) {
+                $('#top-link-block').removeClass('hidden').affix({
+                    // how far to scroll down before link "slides" into view
+                    offset: {top:100}
+                });
+            }
+       
+            
+</script>
+<style type="text/css">
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px;
+    left: 10px;
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 18px;
+    left: 10px;
+}
+span[name="icons"]:hover
+{
+	color:White;
+	}
+</style>
+</body>
+</html>
+
