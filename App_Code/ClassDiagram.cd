@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="nsAdmin.clsHardwarePrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AZAsrZAOiAIAcBFKEAGSAIJFZgCFCgAAgRLVxhIBA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nsAdmin.clsMiscellaneousPrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAACDBAAAAAIABBgAAAQAAQAIIAAAIHiAAAQAgkCQw=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nsAdmin.clsSoftwarePrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAZAQIACAABCAGAAABQKhYAAACAAJAAEwAAAACMIAQA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nsAdmin.clsStationaryPrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACEAAAAAQAAAEAAAgAABDBBAAAAgIACAAAAAQAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nsAdmin.clscon" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsAdmin.clsHardware" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIQAAEAAAAAAAAAgAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsAdmin.clsMiscellaneous" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIQAAEAAAAAAAAAAAAAAIAAAEAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsAdmin.clsSoftware" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIQAAEAAAAAAAAAAAAAAAAAAEABAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsAdmin.clsStationary" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIQAAEAAAQAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsUser.clsEmpPrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEgAAABAAAAAECQAAgAAQABpgBgAAAAiAAAAAGAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nsUser.clscon" Collapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsUser.clsEmp" Collapsed="true">
+    <Position X="0.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACAgAAAIQAAAgABAAAAAEAAAAAAAAAECAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nsPing_utility.clsPingingPrp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAQAAAAAAAAAAAAAAAIAAABAAAAAAAAEAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="nsAdmin.Ihardware" Collapsed="true">
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4AQAkCJAKCAIAYAFAEAECAIABJgCAAgAAABLFxgAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="nsAdmin.Imiscellaneous" Collapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABBAAAAAAABBgAAAAAAQAIIAAAAAiAAAAAgAAQg=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="nsAdmin.Isoftware" Collapsed="true">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAQAACAAACACAAABQIAAAAAAAAJAAAwAAAAAIAAQA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="nsAdmin.Istationary" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAQAAAAAAAgAABABBAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="nsUser.Iemp" Collapsed="true">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAECQAAAAAQABhgAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="nsPing_utility.Ipinging" Collapsed="true">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAQAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
