@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="EMPLOYEE_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+     <link href="../Css/bootstrap.css" rel="stylesheet" type="text/css" />
+     <script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+     <script src="../js/bootstrap.js" type="text/javascript"></script>
+    <title>Employee Panel</title>
+     <link href="/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+</head>
+
+<body>
+    
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+     <div>
+  		<nav class="navbar navbar-default" >
+  			<div>
+  				<!-- Brand and toggle get grouped for better mobile display -->
+  				<div class="navbar-header">
+  					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+                    <img class="animation_infinite img-circle" id="logo" src="../Images/csir_csio_unlabeled.jpg" alt="logo" width="50px" height="50px" />
+  				</div>
+
+  <!---------------start nav left--------------------------- Collect the nav links, forms, and other content for toggling -->
+
+  				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+  					<ul class="nav navbar-nav ">
+  						<li><a href="../Home.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+  						<li class="dropdown">
+  							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Infrastructure Management<span class="caret"></span></a>
+
+  							<ul class="dropdown-menu" role="menu">
+  								<li><a href="../EMPLOYEE/pingtest.aspx">Ping Test</a></li>
+  								<li><a href="../EMPLOYEE/speedtest.aspx">Speed Test</a></li>
+  							</ul>
+  						</li>
+                        
+                        <li><a href="../EMPLOYEE/inventory.aspx">My Inventory Room</a></li>
+                        <li><a class="btn btn-primary btn-lg" href="../ADMIN/notifications.aspx">
+                                <span class="glyphicon glyphicon-bell badge" id="no_of_notifications" runat="server">
+                                </span> </a></li>
+  						</ul>
+                        <!-------------------------------------------------------End--nav left-->
+  					
+                        <!------------------------------------------------------start----nav right-->
+  					<ul class="nav navbar-nav navbar-right">
+  						
+  						<li>
+  						    <asp:LinkButton class="glyphicon glyphicon-off" ID="LinkButton1"
+                                runat="server" ToolTip="sign out" onclick="LinkButton1_Click"></asp:LinkButton>
+  						    
+  						</li>
+  						
+  					</ul>
+                        <!------------------------------------------------------End----nav right-->
+  				</div><!-- navbar collapse end -->
+  			</div><!-- container-fluid end -->
+  		</nav>
+    </div>
+    
+
+       
+                
+        
+               
+
+
+
+          
+                
+                
+               
+    
+
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" style=" background-color:#9932cc; color:Yellow;" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i>Top
+    </a>
+</span>
+<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+    <script type="text/javascript">
+// Only enable if the document has a long scroll bar
+// Note the window height + offset
+if ( ($(window).height() + 100) < $(document).height() ) {
+    $('#top-link-block').removeClass('hidden').affix({
+        // how far to scroll down before link "slides" into view
+        offset: {top:100}
+    });
+}
+</script>
+<style type="text/css">
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px;
+    left: 10px;
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 18px;
+    left: 10px;
+}
+</style>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+    <span id="Span1" class="hidden">
+    <a href="#top" class="well well-sm" style=" borbackground-color:#9932cc; color:Yellow;" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i>Top
+    </a>
+</span>
+
+    </form>
+    <script type="text/javascript">
+        // Only enable if the document has a long scroll bar
+        // Note the window height + offset
+        if (($(window).height() + 100) < $(document).height()) {
+            $('#top-link-block').removeClass('hidden').affix({
+                // how far to scroll down before link "slides" into view
+                offset: { top: 100 }
+            });
+        }
+        
+</script>
+<style type="text/css">
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px;
+    left: 10px;
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 18px;
+    left: 10px;
+}
+
+</style>
+    </body>
+</html>
+
